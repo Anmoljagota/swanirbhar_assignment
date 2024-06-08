@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import User from "../components/User";
+import { useNavigate } from "react-router-dom";
 const Register = () => {
   const details = ["name", "email", "phone", "password"];
   const uservalue = { name: "", email: "", phone: "", password: "" };
@@ -7,6 +8,23 @@ const Register = () => {
   const [loginDetails, setLoginDetails] = useState(uservalue);
   const [error, setError] = useState("");
   const [formError, setFormError] = useState("");
+  const navigate = useNavigate();
+
+  async function saveUser() {
+    try {
+      await fetch("http://localhost:8080/users", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(loginDetails),
+      });
+      localStorage.setItem("token", loginDetails.name);
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+    }
+  }
   const handleDetails = (e) => {
     const { name, value } = e.target;
     setLoginDetails({ ...loginDetails, [name]: value });
@@ -28,10 +46,9 @@ const Register = () => {
     } else if (loginDetails.password.length < 4) {
       setError("password");
       setFormError("must be atleast five characters");
+    } else {
+      saveUser();
     }
-    //  else {
-    //   dispatch(RegiterUser(loginDetails));
-    // }
   };
 
   useEffect(() => {}, []);

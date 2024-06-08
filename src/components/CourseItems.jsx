@@ -2,12 +2,12 @@ import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { Box, Button, Flex, Heading, Text } from "@chakra-ui/react";
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { RandomImages } from "../utils/RandomImages";
 const CourseItems = ({ course }) => {
   return (
     <Box
       borderRadius={10}
-      bgImage={`url(${course.image})`}
+      bgImage={`url(${RandomImages[Math.floor(Math.random() * 10)]})`}
       pos={"relative"}
       height={"300px"}
       boxShadow={"rgba(0, 0, 0, 0.16) 0px 1px 4px"}

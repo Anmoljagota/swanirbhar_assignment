@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
 import CourseItems from "../components/CourseItems";
 import { AddCourse } from "../components/AddCourse";
+import NavBar from "../components/Navbar";
 const Home = () => {
   const [data, setData] = useState("");
   const [loading, setLoading] = useState(false);
@@ -20,7 +21,6 @@ const Home = () => {
     GetData();
   }, []);
 
-  
   return (
     <Flex bg={"#F8F0F9"} gap={10}>
       <Sidebar />
@@ -32,7 +32,9 @@ const Home = () => {
         minW={"80%"}
         p={4}
       >
-        <AddCourse  />
+    <NavBar/>
+
+        <AddCourse />
 
         <SimpleGrid columns={[1, 2, 3]} spacing={"40px"}>
           {data.length > 0 &&

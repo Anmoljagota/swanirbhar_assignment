@@ -256,5 +256,56 @@
         }
       ]
     }
+  ],
+  "users": [
+    {
+      "id": "d9a8",
+      "name": "tanya",
+      "email": "tanyajagota04@gmail.com",
+      "phone": "09805580258",
+      "password": "tanya123"
+    },
+    {
+      "id": "2540",
+      "name": "tanya",
+      "email": "tanyajagota04@gmail.com",
+      "phone": "09805580258",
+      "password": "tanya123"
+    },
+    {
+      "id": "60d0",
+      "name": "tanya",
+      "email": "tanyajagota04@gmail.com",
+      "phone": "09805580258",
+      "password": "tanya123"
+    },
+    {
+      "id": "e996",
+      "name": "tanya",
+      "email": "tanyajagota04@gmail.com",
+      "phone": "09805580258",
+      "password": "tanya123"
+    },
+    {
+      "id": "9eeb",
+      "name": "tanya",
+      "email": "tanyajagota04@gmail.com",
+      "phone": "09805580258",
+      "password": "tanya123"
+    },
+    {
+      "id": "9e0c",
+      "name": "tanya",
+      "email": "tanyajagota04@gmail.com",
+      "phone": "09805580258",
+      "password": "tanya123"
+    },
+    {
+      "id": "c198",
+      "name": "tanya",
+      "email": "tanyajagota04@gmail.com",
+      "phone": "09805580258",
+      "password": "tanya123"
+    }
   ]
 }
