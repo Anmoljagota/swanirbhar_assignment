@@ -1,0 +1,260 @@
+{
+  "courses": [
+    {
+      "id": "1",
+      "title": "Intro to Floristics",
+      "description": "An intro to Floristics course provides students with a comprehensive understanding of the fundamentals of floral design. Students learn about the different types of flowers and plants, their care, and advanced topics.",
+      "image": "https://images.unsplash.com/photo-1487611459768-bd414656ea10?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "lessons": [
+        {
+          "lessontitle": "Lesson 1: Introduction to Floristics",
+          "completed": false,
+          "material": "In this lesson, students will learn the basic concepts of floristics and its importance in the field of floral design."
+        },
+        {
+          "lessontitle": "Lesson 2: Types of Flowers",
+          "completed": false,
+          "material": "This lesson covers the various types of flowers commonly used in floral arrangements, including their characteristics and symbolism."
+        },
+        {
+          "lessontitle": "Lesson 3: Floral Arrangements",
+          "completed": false,
+          "material": "Students will explore different techniques for creating stunning floral arrangements, including bouquet and centerpiece designs."
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Advanced Web Development",
+      "description": "This course dives deep into advanced topics of web development, including modern JavaScript frameworks, server-side rendering, and performance optimization. Ideal for students who want to take their web development skills to the next level.",
+      "image": "https://images.unsplash.com/photo-1487611459768-bd414656ea10?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "lessons": [
+        {
+          "lessontitle": "Lesson 1: Introduction to Floristics",
+          "completed": false,
+          "material": "In this lesson, students will learn the basic concepts of floristics and its importance in the field of floral design."
+        },
+        {
+          "lessontitle": "Lesson 2: Types of Flowers",
+          "completed": false,
+          "material": "This lesson covers the various types of flowers commonly used in floral arrangements, including their characteristics and symbolism."
+        },
+        {
+          "lessontitle": "Lesson 3: Floral Arrangements",
+          "completed": false,
+          "material": "Students will explore different techniques for creating stunning floral arrangements, including bouquet and centerpiece designs."
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Graphic Design Essentials",
+      "description": "Graphic Design Essentials covers the core principles of graphic design, including typography, color theory, and layout techniques. Students will work on practical projects to develop a strong design portfolio.",
+      "image": "https://images.unsplash.com/photo-1487611459768-bd414656ea10?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "lessons": [
+        {
+          "lessontitle": "Lesson 1: Introduction to Floristics",
+          "completed": false,
+          "material": "In this lesson, students will learn the basic concepts of floristics and its importance in the field of floral design."
+        },
+        {
+          "lessontitle": "Lesson 2: Types of Flowers",
+          "completed": false,
+          "material": "This lesson covers the various types of flowers commonly used in floral arrangements, including their characteristics and symbolism."
+        },
+        {
+          "lessontitle": "Lesson 3: Floral Arrangements",
+          "completed": false,
+          "material": "Students will explore different techniques for creating stunning floral arrangements, including bouquet and centerpiece designs."
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Introduction to Data Science",
+      "description": "This course introduces students to the field of data science, covering key concepts such as data manipulation, statistical analysis, and machine learning. Hands-on projects will help students apply these techniques to real-world data sets.",
+      "image": "https://images.unsplash.com/photo-1487611459768-bd414656ea10?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "lessons": [
+        {
+          "lessontitle": "Lesson 1: Introduction to Floristics",
+          "completed": false,
+          "material": "In this lesson, students will learn the basic concepts of floristics and its importance in the field of floral design."
+        },
+        {
+          "lessontitle": "Lesson 2: Types of Flowers",
+          "completed": false,
+          "material": "This lesson covers the various types of flowers commonly used in floral arrangements, including their characteristics and symbolism."
+        },
+        {
+          "lessontitle": "Lesson 3: Floral Arrangements",
+          "completed": false,
+          "material": "Students will explore different techniques for creating stunning floral arrangements, including bouquet and centerpiece designs."
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Digital Marketing Strategies",
+      "description": "Learn the essential strategies of digital marketing, including SEO, content marketing, social media marketing, and PPC advertising. This course is designed to equip students with the skills needed to run successful digital marketing campaigns.",
+      "image": "https://images.unsplash.com/photo-1487611459768-bd414656ea10?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "lessons": [
+        {
+          "lessontitle": "Lesson 1: Introduction to Floristics",
+          "completed": false,
+          "material": "In this lesson, students will learn the basic concepts of floristics and its importance in the field of floral design."
+        },
+        {
+          "lessontitle": "Lesson 2: Types of Flowers",
+          "completed": false,
+          "material": "This lesson covers the various types of flowers commonly used in floral arrangements, including their characteristics and symbolism."
+        },
+        {
+          "lessontitle": "Lesson 3: Floral Arrangements",
+          "completed": false,
+          "material": "Students will explore different techniques for creating stunning floral arrangements, including bouquet and centerpiece designs."
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Basics of Photography",
+      "description": "The Basics of Photography course teaches students about camera settings, composition, and lighting. Students will gain hands-on experience through various photography projects and assignments.",
+      "image": "https://images.unsplash.com/photo-1487611459768-bd414656ea10?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "lessons": [
+        {
+          "lessontitle": "Lesson 1: Introduction to Floristics",
+          "completed": false,
+          "material": "In this lesson, students will learn the basic concepts of floristics and its importance in the field of floral design."
+        },
+        {
+          "lessontitle": "Lesson 2: Types of Flowers",
+          "completed": false,
+          "material": "This lesson covers the various types of flowers commonly used in floral arrangements, including their characteristics and symbolism."
+        },
+        {
+          "lessontitle": "Lesson 3: Floral Arrangements",
+          "completed": false,
+          "material": "Students will explore different techniques for creating stunning floral arrangements, including bouquet and centerpiece designs."
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "title": "Introduction to Python Programming",
+      "description": "This beginner-friendly course covers the basics of Python programming. Students will learn about variables, data types, control structures, functions, and more through interactive coding exercises.",
+      "image": "https://images.unsplash.com/photo-1487611459768-bd414656ea10?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "lessons": [
+        {
+          "lessontitle": "Lesson 1: Introduction to Floristics",
+          "completed": false,
+          "material": "In this lesson, students will learn the basic concepts of floristics and its importance in the field of floral design."
+        },
+        {
+          "lessontitle": "Lesson 2: Types of Flowers",
+          "completed": false,
+          "material": "This lesson covers the various types of flowers commonly used in floral arrangements, including their characteristics and symbolism."
+        },
+        {
+          "lessontitle": "Lesson 3: Floral Arrangements",
+          "completed": false,
+          "material": "Students will explore different techniques for creating stunning floral arrangements, including bouquet and centerpiece designs."
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "title": "Project Management Fundamentals",
+      "description": "Project Management Fundamentals introduces students to key project management concepts and methodologies, including Agile, Scrum, and Waterfall. Students will learn how to plan, execute, and manage projects effectively.",
+      "image": "https://images.unsplash.com/photo-1487611459768-bd414656ea10?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "lessons": [
+        {
+          "lessontitle": "Lesson 1: Introduction to Floristics",
+          "completed": false,
+          "material": "In this lesson, students will learn the basic concepts of floristics and its importance in the field of floral design."
+        },
+        {
+          "lessontitle": "Lesson 2: Types of Flowers",
+          "completed": false,
+          "material": "This lesson covers the various types of flowers commonly used in floral arrangements, including their characteristics and symbolism."
+        },
+        {
+          "lessontitle": "Lesson 3: Floral Arrangements",
+          "completed": false,
+          "material": "Students will explore different techniques for creating stunning floral arrangements, including bouquet and centerpiece designs."
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "title": "Creative Writing Workshop",
+      "description": "This course is designed for aspiring writers who want to improve their creative writing skills. Topics include narrative techniques, character development, and writing for different genres. Students will participate in writing exercises and peer reviews.",
+      "image": "https://images.unsplash.com/photo-1487611459768-bd414656ea10?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "lessons": [
+        {
+          "lessontitle": "Lesson 1: Introduction to Floristics",
+          "completed": false,
+          "material": "In this lesson, students will learn the basic concepts of floristics and its importance in the field of floral design."
+        },
+        {
+          "lessontitle": "Lesson 2: Types of Flowers",
+          "completed": false,
+          "material": "This lesson covers the various types of flowers commonly used in floral arrangements, including their characteristics and symbolism."
+        },
+        {
+          "lessontitle": "Lesson 3: Floral Arrangements",
+          "completed": false,
+          "material": "Students will explore different techniques for creating stunning floral arrangements, including bouquet and centerpiece designs."
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "title": "Introduction to Artificial Intelligence",
+      "description": "Explore the world of artificial intelligence in this introductory course. Topics include machine learning, neural networks, and natural language processing. Students will work on practical projects to build AI applications.",
+      "image": "https://images.unsplash.com/photo-1487611459768-bd414656ea10?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "lessons": [
+        {
+          "lessontitle": "Lesson 1: Introduction to Floristics",
+          "completed": false,
+          "material": "In this lesson, students will learn the basic concepts of floristics and its importance in the field of floral design."
+        },
+        {
+          "lessontitle": "Lesson 2: Types of Flowers",
+          "completed": false,
+          "material": "This lesson covers the various types of flowers commonly used in floral arrangements, including their characteristics and symbolism."
+        },
+        {
+          "lessontitle": "Lesson 3: Floral Arrangements",
+          "completed": false,
+          "material": "Students will explore different techniques for creating stunning floral arrangements, including bouquet and centerpiece designs."
+        }
+      ]
+    },
+    {
+      "id": "075d",
+      "title": "",
+      "description": "",
+      "lessons": [
+        {
+          "lessontitle": "kalllloloyyyuhy",
+          "material": "fgfg"
+        }
+      ]
+    },
+    {
+      "id": "a0b3",
+      "title": "anmlo",
+      "description": "dsfgggg",
+      "lessons": [
+        {
+          "lessontitle": "dfsfs",
+          "material": "dsfgdggg"
+        },
+        {
+          "lessontitle": "kallllo",
+          "material": "ghhhhhhhhh"
+        }
+      ]
+    }
+  ]
+}
