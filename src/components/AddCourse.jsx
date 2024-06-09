@@ -46,7 +46,7 @@ export function AddCourse() {
       setCourseDetails({ ...courseDetails, [name]: value });
     }
   }
-  const AddNewCourse =  () => {
+  const AddNewCourse = () => {
     dispatch(AddnewCourse(courseDetails));
   };
 
@@ -64,7 +64,7 @@ export function AddCourse() {
         leftIcon={<AddIcon />}
         variant="solid"
         size="md"
-        w={"20%"}
+        w={{ md: "25%", lg: "20%", base: "60%" }}
         bg={"black"}
         color={"white"}
         onClick={onOpen}

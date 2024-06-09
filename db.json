@@ -8,7 +8,7 @@
       "lessons": [
         {
           "lessontitle": "Lesson 1: Introduction to Floristics",
-          "completed": true,
+          "completed": false,
           "material": "In this lesson, students will learn the basic concepts of floristics and its importance in the field of floral design."
         },
         {
@@ -18,11 +18,11 @@
         },
         {
           "lessontitle": "Lesson 3: Floral Arrangements",
-          "completed": false,
+          "completed": true,
           "material": "Students will explore different techniques for creating stunning floral arrangements, including bouquet and centerpiece designs."
         }
       ],
-      "number of students": 124,
+      "number of students": 126,
       "number of lessons": 3,
       "numberOfStudents": 121
     },
@@ -39,12 +39,12 @@
         },
         {
           "lessontitle": "Lesson 2: Types of Flowers",
-          "completed": false,
+          "completed": true,
           "material": "This lesson covers the various types of flowers commonly used in floral arrangements, including their characteristics and symbolism."
         },
         {
           "lessontitle": "Lesson 3: Floral Arrangements",
-          "completed": false,
+          "completed": true,
           "material": "Students will explore different techniques for creating stunning floral arrangements, including bouquet and centerpiece designs."
         },
         {
@@ -139,7 +139,7 @@
         },
         {
           "lessontitle": "Lesson 3: Floral Arrangements",
-          "completed": false,
+          "completed": true,
           "material": "Students will explore different techniques for creating stunning floral arrangements, including bouquet and centerpiece designs."
         },
         {
@@ -188,7 +188,7 @@
           "material": "Understanding the importance of sustainability and how to incorporate eco-friendly practices in floristry."
         }
       ],
-      "number of students": 159,
+      "number of students": 160,
       "number of lessons": 12
     },
     {
@@ -308,7 +308,7 @@
           "material": "Identifying and using seasonal flowers to enhance the relevance and beauty of floral designs."
         }
       ],
-      "number of students": 112,
+      "number of students": 113,
       "number of lessons": 6
     },
     {
@@ -333,7 +333,7 @@
           "material": "Students will explore different techniques for creating stunning floral arrangements, including bouquet and centerpiece designs."
         }
       ],
-      "number of students": 89,
+      "number of students": 90,
       "number of lessons": 3
     },
     {

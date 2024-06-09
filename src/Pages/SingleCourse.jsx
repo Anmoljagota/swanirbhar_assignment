@@ -8,53 +8,74 @@ import {
   Badge,
   Button,
   Icon,
-  Divider,
   Flex,
   useColorModeValue,
   CircularProgress,
   CircularProgressLabel,
+  useToast,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import { FaCheck, FaLeaf, FaPlay, FaTimes } from "react-icons/fa";
-import { useLocation } from "react-router-dom";
+import { FaLeaf, FaPlay } from "react-icons/fa";
+import { useLocation, useParams } from "react-router-dom";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { MarkLesson } from "../redux/action";
+import { GetCourse, MarkLesson } from "../redux/action";
+import Lessons from "../components/Lessons";
 const SingleCourse = () => {
+  const toast = useToast();
+  const [data, setData] = useState({});
   const dispatch = useDispatch();
+  const { state } = useLocation();
   const { courses } = useSelector((details) => {
     return details;
   });
-  const [data, setData] = useState({});
-  const { state } = useLocation();
+  const { id } = useParams();
+  // console.log(id,"i am id");
+  async function GetSinglecourse(courseId) {
+    const data = await axios.get(`https://swanirbhar-backend.onrender.com/courses/${courseId}`);
+    setData(data.data);
+  }
 
-  const enrolledData = JSON.parse(localStorage.getItem("enrolled")) || [];
-  const isEnrolled = enrolledData.includes(state.id);
-  const [text, setText] = useState(isEnrolled ? "Enrolled" : "Enroll Now");
-  const [disabled, setDisabled] = useState(isEnrolled ? true : false);
-  useEffect(() => {
-    if (state) {
-      setData(state);
-    }
-  }, []);
-  const cardHoverBg = useColorModeValue("gray.100", "gray.700");
   const iconColor = useColorModeValue("green.500", "green.300");
   const buttonBg = useColorModeValue("teal.500", "teal.300");
   const buttonHoverBg = useColorModeValue("teal.600", "teal.400");
+  // GETTING WHOLE DATA USING REDUX of courses
 
+  const enrolledData = JSON.parse(localStorage.getItem("enrolled")) || [];
+
+  const isEnrolled = enrolledData.includes(state.id);
+
+  const [text, setText] = useState(isEnrolled ? "Enrolled" : "Enroll Now");
+  const [disabled, setDisabled] = useState(isEnrolled ? true : false);
+
+  useEffect(() => {
+    GetSinglecourse(id);
+  }, []);
+
+  // toggle to mark as compelete or notcomplete lesson
   const handleToggleLesson = (index, id, lessonname) => {
-    setData((prevData) => ({
-      ...prevData,
-      lessons: prevData.lessons.map((lesson, i) =>
-        i === index ? { ...lesson, completed: !lesson.completed } : lesson
-      ),
-    }));
-    Progress(id, lessonname);
+    if (!disabled) {
+      toast({
+        title: `Enroll first`,
+        status: "error",
+        isClosable: true,
+        duration: 2000
+      });
+    } else {
+      setData((prevData) => ({
+        ...prevData,
+        lessons: prevData.lessons.map((lesson, i) =>
+          i === index ? { ...lesson, completed: !lesson.completed } : lesson
+        ),
+      }));
+      Progress(id, lessonname);
+    }
   };
 
+  //this function is created to enrolled the user to a particular course
   async function Enrolled(id) {
     try {
-      await axios.patch(`http://localhost:8080/courses/${id}`, {
+      await axios.patch(`https://swanirbhar-backend.onrender.com/courses/${id}`, {
         "number of students": data["number of students"] + 1,
       });
       const enrolled = JSON.parse(localStorage.getItem("enrolled")) || [];
@@ -66,7 +87,7 @@ const SingleCourse = () => {
       console.log(err);
     }
   }
-
+  // this function is created to check the user progress
   async function Progress(courseid, lessonname) {
     courses.forEach((ele) => {
       if (ele.id === courseid) {
@@ -75,7 +96,10 @@ const SingleCourse = () => {
             ? { ...lesson, completed: !lesson.completed }
             : lesson;
         });
-        dispatch(MarkLesson(courseid, updatedLessons));
+        // console.log(updatedLessons, "che..");
+        dispatch(MarkLesson(courseid, updatedLessons)).then(() => {
+          dispatch(GetCourse());
+        });
       }
     });
   }
@@ -90,12 +114,20 @@ const SingleCourse = () => {
           >
             <Box flex="1" mb={{ base: 6, md: 0 }} p={5}>
               <CircularProgress
-                value={40}
+                value={
+                  localStorage.getItem("progress")
+                    ? localStorage.getItem("progress")
+                    : "0%"
+                }
                 color="orange.400"
                 thickness={"16px"}
                 size={{ base: "150px", sm: "200px", md: "300px" }}
               >
-                <CircularProgressLabel>40%</CircularProgressLabel>
+                <CircularProgressLabel>
+                  {localStorage.getItem("progress")
+                    ? localStorage.getItem("progress")
+                    : "0%"}
+                </CircularProgressLabel>
               </CircularProgress>
             </Box>
             <VStack flex="1" align="start" spacing={4} pl={{ md: 10 }}>
@@ -129,49 +161,15 @@ const SingleCourse = () => {
           </Heading>
           <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={6}>
             {data.lessons.map((lesson, index) => (
-              <Box
+              <Lessons
+                lesson={lesson}
+                index={index}
                 key={index}
-                p={5}
-                shadow="lg"
-                borderWidth="1px"
-                borderRadius="lg"
-                bg={lesson.completed ? "green.200" : "red.200"}
-                transition="all 0.3s ease-in-out"
-                _hover={{ bg: cardHoverBg, transform: "scale(1.05)" }}
-              >
-                <VStack align="start" spacing={4}>
-                  <HStack spacing={2}>
-                    <Icon
-                      as={lesson.completed ? FaCheck : FaTimes}
-                      color={lesson.completed ? "green.400" : "red.400"}
-                      w={6}
-                      h={6}
-                    />
-                    <Heading
-                      fontSize="lg"
-                      color={lesson.completed ? "green.700" : "red.700"}
-                    >
-                      {lesson.lessontitle}
-                    </Heading>
-                  </HStack>
-                  <Divider />
-                  <Text mt={2} color="gray.600">
-                    {lesson.material}
-                  </Text>
-                  <Button
-                    size="sm"
-                    variant="outline"
-                    colorScheme={lesson.completed ? "green" : "red"}
-                    onClick={() =>
-                      handleToggleLesson(index, data.id, lesson.lessontitle)
-                    }
-                  >
-                    {lesson.completed
-                      ? "Mark as Incomplete"
-                      : "Mark as Complete"}
-                  </Button>
-                </VStack>
-              </Box>
+                id={data.id}
+                handleToggleLesson={() =>
+                  handleToggleLesson(index, id, lesson.lessontitle)
+                }
+              />
             ))}
           </SimpleGrid>
         </>

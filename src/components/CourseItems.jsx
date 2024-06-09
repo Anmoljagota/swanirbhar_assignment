@@ -38,6 +38,7 @@ const CourseItems = ({ course }) => {
           bottom={"0"}
           h={"70%"}
           p={4}
+          w={"100%"}
         >
           <Heading as="h6" size="sm">
             {course.title}

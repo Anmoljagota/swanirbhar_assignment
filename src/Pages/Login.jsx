@@ -12,13 +12,14 @@ const Login = () => {
     const { name, value } = e.target;
     setLoginDetails({ ...loginDetails, [name]: value });
   };
-  console.log(loginDetails,"logi");
-  //TO CHECK THE MAIL PATTERNN
+  //TO CHECK THE MAIL PATTERN
   const validateEmailFormat = (email) => {
     email = email.trim();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
+
+  //submit the user details
   const handleSubmit = () => {
     if (!validateEmailFormat(loginDetails.email)) {
       setError("email");
@@ -27,15 +28,8 @@ const Login = () => {
       setError("password");
       setFormError("must be atleast five characters");
     }
-    // else {
-    //   dispatch(LoginUser(loginDetails));
-    // }
   };
-  useEffect(() => {
-    // if (message.message === "logged in successfully") {
-    //   navigate("/");
-    // }
-  }, []);
+
   return (
     <div>
       <User

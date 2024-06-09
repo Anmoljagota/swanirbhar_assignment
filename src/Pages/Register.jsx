@@ -12,7 +12,7 @@ const Register = () => {
 
   async function saveUser() {
     try {
-      await fetch("http://localhost:8080/users", {
+      await fetch("https://swanirbhar-backend.onrender.com/courses", {
         method: "POST",
         headers: {
           "content-type": "application/json",

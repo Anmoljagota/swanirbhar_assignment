@@ -3,7 +3,7 @@ import axios from "axios";
 export const GetCourse = () => async (dispatch) => {
   try {
     dispatch({ type: course.GETCOURSE_LOADING });
-    const data = await axios.get(`http://localhost:8080/courses`);
+    const data = await axios.get(`https://swanirbhar-backend.onrender.com/courses`);
     // const data = await res.json();
     dispatch({ type: course.GETCOURSE_SUCCESS, payload: data.data });
   } catch (err) {
@@ -14,7 +14,7 @@ export const GetCourse = () => async (dispatch) => {
 export const AddnewCourse = (courseDetails) => async (dispatch) => {
   try {
     dispatch({ type: course.POSTCOURSE_LOADING });
-    await fetch("http://localhost:8080/courses", {
+    await fetch("https://swanirbhar-backend.onrender.com/courses", {
       method: "POST",
       headers: {
         "content-Type": "application/json",
@@ -28,7 +28,7 @@ export const AddnewCourse = (courseDetails) => async (dispatch) => {
 
 export const MarkLesson = (courseId, lessons) => async (dispatch) => {
   try {
-    await axios.patch(`http://localhost:8080/courses/${courseId}`, {
+    return await axios.patch(`https://swanirbhar-backend.onrender.com/courses/${courseId}`, {
       lessons,
     });
   } catch (err) {
