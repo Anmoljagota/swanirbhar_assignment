@@ -1,26 +1,24 @@
-import { Flex, SimpleGrid, Stack, useDisclosure } from "@chakra-ui/react";
+import { Flex, SimpleGrid, Stack } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
 import CourseItems from "../components/CourseItems";
 import { AddCourse } from "../components/AddCourse";
 import NavBar from "../components/Navbar";
+import { useDispatch, useSelector } from "react-redux";
+import { GetCourse } from "../redux/action";
 const Home = () => {
-  const [data, setData] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [lessons, setLessons] = useState([]);
-  const GetData = async () => {
-    setLoading(true);
-    const res = await fetch("http://localhost:8080/courses");
-    const data = await res.json();
-    setData(data);
-    setLoading(false);
-    console.log(data, "data..");
-  };
-
+  const dispatch = useDispatch();
+  const { courses, loading } = useSelector((details) => {
+    return details;
+  });
   useEffect(() => {
-    GetData();
+    dispatch(GetCourse());
   }, []);
 
+  
+  if (loading) {
+    return <h1>...Loading</h1>;
+  }
   return (
     <Flex bg={"#F8F0F9"} gap={10}>
       <Sidebar />
@@ -29,17 +27,17 @@ const Home = () => {
         spacing="24px"
         bg={"#FFFFFF"}
         minH={"100vh"}
-        minW={"80%"}
+        minW={{ sm: "95%", md: "80%", base: "95%" }}
         p={4}
       >
-    <NavBar/>
+        <NavBar />
 
         <AddCourse />
 
         <SimpleGrid columns={[1, 2, 3]} spacing={"40px"}>
-          {data.length > 0 &&
-            data?.map((course) => {
-              return <CourseItems course={course} key={course.id} />;
+          {courses.length > 0 &&
+            courses?.map((course) => {
+              return <CourseItems course={course} key={course.id}/>;
             })}
         </SimpleGrid>
       </Stack>

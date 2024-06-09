@@ -18,9 +18,13 @@ import {
   Textarea,
   VStack,
 } from "@chakra-ui/react";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { MdOutlineAdd } from "react-icons/md";
+import { useDispatch } from "react-redux";
+import { AddnewCourse } from "../redux/action";
 export function AddCourse() {
+  const dispatch = useDispatch();
+
   const details = {
     title: "",
     description: "",
@@ -42,16 +46,9 @@ export function AddCourse() {
       setCourseDetails({ ...courseDetails, [name]: value });
     }
   }
-  const AddCourse = async () => {
-    await fetch("http://localhost:8080/courses", {
-      method: "POST",
-      headers: {
-        "content-Type": "application/json",
-      },
-      body: JSON.stringify(courseDetails),
-    });
+  const AddNewCourse =  () => {
+    dispatch(AddnewCourse(courseDetails));
   };
-  console.log(courseDetails, "lo");
 
   function handleInput() {
     setInput(true);
@@ -138,7 +135,7 @@ export function AddCourse() {
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme="blue" mr={3} onClick={AddCourse}>
+            <Button colorScheme="blue" mr={3} onClick={AddNewCourse}>
               Submit
             </Button>
             <Button onClick={onClose}>Cancel</Button>

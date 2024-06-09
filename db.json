@@ -8,12 +8,12 @@
       "lessons": [
         {
           "lessontitle": "Lesson 1: Introduction to Floristics",
-          "completed": false,
+          "completed": true,
           "material": "In this lesson, students will learn the basic concepts of floristics and its importance in the field of floral design."
         },
         {
           "lessontitle": "Lesson 2: Types of Flowers",
-          "completed": false,
+          "completed": true,
           "material": "This lesson covers the various types of flowers commonly used in floral arrangements, including their characteristics and symbolism."
         },
         {
@@ -21,7 +21,10 @@
           "completed": false,
           "material": "Students will explore different techniques for creating stunning floral arrangements, including bouquet and centerpiece designs."
         }
-      ]
+      ],
+      "number of students": 124,
+      "number of lessons": 3,
+      "numberOfStudents": 121
     },
     {
       "id": "2",
@@ -31,7 +34,7 @@
       "lessons": [
         {
           "lessontitle": "Lesson 1: Introduction to Floristics",
-          "completed": false,
+          "completed": true,
           "material": "In this lesson, students will learn the basic concepts of floristics and its importance in the field of floral design."
         },
         {
@@ -43,8 +46,35 @@
           "lessontitle": "Lesson 3: Floral Arrangements",
           "completed": false,
           "material": "Students will explore different techniques for creating stunning floral arrangements, including bouquet and centerpiece designs."
+        },
+        {
+          "lessontitle": "Lesson 4: Floral Tools and Supplies",
+          "completed": false,
+          "material": "An overview of essential tools and supplies used in floristry, including how to use them effectively."
+        },
+        {
+          "lessontitle": "Lesson 5: Color Theory in Floristry",
+          "completed": false,
+          "material": "Understanding color theory and its application in floral design to create visually appealing arrangements."
+        },
+        {
+          "lessontitle": "Lesson 6: Seasonal Flowers",
+          "completed": false,
+          "material": "Identifying and using seasonal flowers to enhance the relevance and beauty of floral designs."
+        },
+        {
+          "lessontitle": "Lesson 7: Care and Handling of Flowers",
+          "completed": false,
+          "material": "Techniques for proper care and handling of flowers to extend their freshness and longevity."
+        },
+        {
+          "lessontitle": "Lesson 8: Wedding Floral Designs",
+          "completed": false,
+          "material": "Specialized techniques for creating floral designs for weddings, including bouquets, boutonnieres, and venue decorations."
         }
-      ]
+      ],
+      "number of students": 158,
+      "number of lessons": 8
     },
     {
       "id": "3",
@@ -66,8 +96,30 @@
           "lessontitle": "Lesson 3: Floral Arrangements",
           "completed": false,
           "material": "Students will explore different techniques for creating stunning floral arrangements, including bouquet and centerpiece designs."
+        },
+        {
+          "lessontitle": "Lesson 4: Floral Tools and Supplies",
+          "completed": false,
+          "material": "An overview of essential tools and supplies used in floristry, including how to use them effectively."
+        },
+        {
+          "lessontitle": "Lesson 5: Color Theory in Floristry",
+          "completed": false,
+          "material": "Understanding color theory and its application in floral design to create visually appealing arrangements."
+        },
+        {
+          "lessontitle": "Lesson 6: Seasonal Flowers",
+          "completed": false,
+          "material": "Identifying and using seasonal flowers to enhance the relevance and beauty of floral designs."
+        },
+        {
+          "lessontitle": "Lesson 7: Care and Handling of Flowers",
+          "completed": false,
+          "material": "Techniques for proper care and handling of flowers to extend their freshness and longevity."
         }
-      ]
+      ],
+      "number of students": 115,
+      "number of lessons": 7
     },
     {
       "id": "4",
@@ -89,8 +141,55 @@
           "lessontitle": "Lesson 3: Floral Arrangements",
           "completed": false,
           "material": "Students will explore different techniques for creating stunning floral arrangements, including bouquet and centerpiece designs."
+        },
+        {
+          "lessontitle": "Lesson 4: Floral Tools and Supplies",
+          "completed": false,
+          "material": "An overview of essential tools and supplies used in floristry, including how to use them effectively."
+        },
+        {
+          "lessontitle": "Lesson 5: Color Theory in Floristry",
+          "completed": false,
+          "material": "Understanding color theory and its application in floral design to create visually appealing arrangements."
+        },
+        {
+          "lessontitle": "Lesson 6: Seasonal Flowers",
+          "completed": false,
+          "material": "Identifying and using seasonal flowers to enhance the relevance and beauty of floral designs."
+        },
+        {
+          "lessontitle": "Lesson 7: Care and Handling of Flowers",
+          "completed": false,
+          "material": "Techniques for proper care and handling of flowers to extend their freshness and longevity."
+        },
+        {
+          "lessontitle": "Lesson 8: Wedding Floral Designs",
+          "completed": false,
+          "material": "Specialized techniques for creating floral designs for weddings, including bouquets, boutonnieres, and venue decorations."
+        },
+        {
+          "lessontitle": "Lesson 9: Corporate Floral Arrangements",
+          "completed": false,
+          "material": "Creating professional floral arrangements suitable for corporate events and office spaces."
+        },
+        {
+          "lessontitle": "Lesson 10: Floral Design Business Basics",
+          "completed": false,
+          "material": "An introduction to the business side of floristry, including marketing, pricing, and client management."
+        },
+        {
+          "lessontitle": "Lesson 11: Advanced Floral Techniques",
+          "completed": false,
+          "material": "Exploring advanced techniques in floral design, such as wiring, taping, and creating complex structures."
+        },
+        {
+          "lessontitle": "Lesson 12: Environmental Sustainability in Floristry",
+          "completed": false,
+          "material": "Understanding the importance of sustainability and how to incorporate eco-friendly practices in floristry."
         }
-      ]
+      ],
+      "number of students": 159,
+      "number of lessons": 12
     },
     {
       "id": "5",
@@ -113,7 +212,9 @@
           "completed": false,
           "material": "Students will explore different techniques for creating stunning floral arrangements, including bouquet and centerpiece designs."
         }
-      ]
+      ],
+      "number of students": 77,
+      "number of lessons": 3
     },
     {
       "id": "6",
@@ -135,8 +236,40 @@
           "lessontitle": "Lesson 3: Floral Arrangements",
           "completed": false,
           "material": "Students will explore different techniques for creating stunning floral arrangements, including bouquet and centerpiece designs."
+        },
+        {
+          "lessontitle": "Lesson 4: Floral Tools and Supplies",
+          "completed": false,
+          "material": "An overview of essential tools and supplies used in floristry, including how to use them effectively."
+        },
+        {
+          "lessontitle": "Lesson 5: Color Theory in Floristry",
+          "completed": false,
+          "material": "Understanding color theory and its application in floral design to create visually appealing arrangements."
+        },
+        {
+          "lessontitle": "Lesson 6: Seasonal Flowers",
+          "completed": false,
+          "material": "Identifying and using seasonal flowers to enhance the relevance and beauty of floral designs."
+        },
+        {
+          "lessontitle": "Lesson 7: Care and Handling of Flowers",
+          "completed": false,
+          "material": "Techniques for proper care and handling of flowers to extend their freshness and longevity."
+        },
+        {
+          "lessontitle": "Lesson 8: Wedding Floral Designs",
+          "completed": false,
+          "material": "Specialized techniques for creating floral designs for weddings, including bouquets, boutonnieres, and venue decorations."
+        },
+        {
+          "lessontitle": "Lesson 9: Corporate Floral Arrangements",
+          "completed": false,
+          "material": "Creating professional floral arrangements suitable for corporate events and office spaces."
         }
-      ]
+      ],
+      "number of students": 89,
+      "number of lessons": 9
     },
     {
       "id": "7",
@@ -158,8 +291,25 @@
           "lessontitle": "Lesson 3: Floral Arrangements",
           "completed": false,
           "material": "Students will explore different techniques for creating stunning floral arrangements, including bouquet and centerpiece designs."
+        },
+        {
+          "lessontitle": "Lesson 4: Floral Tools and Supplies",
+          "completed": false,
+          "material": "An overview of essential tools and supplies used in floristry, including how to use them effectively."
+        },
+        {
+          "lessontitle": "Lesson 5: Color Theory in Floristry",
+          "completed": false,
+          "material": "Understanding color theory and its application in floral design to create visually appealing arrangements."
+        },
+        {
+          "lessontitle": "Lesson 6: Seasonal Flowers",
+          "completed": false,
+          "material": "Identifying and using seasonal flowers to enhance the relevance and beauty of floral designs."
         }
-      ]
+      ],
+      "number of students": 112,
+      "number of lessons": 6
     },
     {
       "id": "8",
@@ -182,7 +332,9 @@
           "completed": false,
           "material": "Students will explore different techniques for creating stunning floral arrangements, including bouquet and centerpiece designs."
         }
-      ]
+      ],
+      "number of students": 89,
+      "number of lessons": 3
     },
     {
       "id": "9",
@@ -227,8 +379,55 @@
           "lessontitle": "Lesson 3: Floral Arrangements",
           "completed": false,
           "material": "Students will explore different techniques for creating stunning floral arrangements, including bouquet and centerpiece designs."
+        },
+        {
+          "lessontitle": "Lesson 4: Floral Tools and Supplies",
+          "completed": false,
+          "material": "An overview of essential tools and supplies used in floristry, including how to use them effectively."
+        },
+        {
+          "lessontitle": "Lesson 5: Color Theory in Floristry",
+          "completed": false,
+          "material": "Understanding color theory and its application in floral design to create visually appealing arrangements."
+        },
+        {
+          "lessontitle": "Lesson 6: Seasonal Flowers",
+          "completed": false,
+          "material": "Identifying and using seasonal flowers to enhance the relevance and beauty of floral designs."
+        },
+        {
+          "lessontitle": "Lesson 7: Care and Handling of Flowers",
+          "completed": false,
+          "material": "Techniques for proper care and handling of flowers to extend their freshness and longevity."
+        },
+        {
+          "lessontitle": "Lesson 8: Wedding Floral Designs",
+          "completed": false,
+          "material": "Specialized techniques for creating floral designs for weddings, including bouquets, boutonnieres, and venue decorations."
+        },
+        {
+          "lessontitle": "Lesson 9: Corporate Floral Arrangements",
+          "completed": false,
+          "material": "Creating professional floral arrangements suitable for corporate events and office spaces."
+        },
+        {
+          "lessontitle": "Lesson 10: Floral Design Business Basics",
+          "completed": false,
+          "material": "An introduction to the business side of floristry, including marketing, pricing, and client management."
+        },
+        {
+          "lessontitle": "Lesson 11: Advanced Floral Techniques",
+          "completed": false,
+          "material": "Exploring advanced techniques in floral design, such as wiring, taping, and creating complex structures."
+        },
+        {
+          "lessontitle": "Lesson 12: Environmental Sustainability in Floristry",
+          "completed": false,
+          "material": "Understanding the importance of sustainability and how to incorporate eco-friendly practices in floristry."
         }
-      ]
+      ],
+      "number of students": 121,
+      "number of lessons": 12
     },
     {
       "id": "075d",
@@ -239,7 +438,9 @@
           "lessontitle": "kalllloloyyyuhy",
           "material": "fgfg"
         }
-      ]
+      ],
+      "number of students": 12,
+      "number of lessons": 1
     },
     {
       "id": "a0b3",
@@ -254,7 +455,15 @@
           "lessontitle": "kallllo",
           "material": "ghhhhhhhhh"
         }
-      ]
+      ],
+      "number of students": 88,
+      "number of lessons": 2
+    },
+    {
+      "id": "c688",
+      "title": "tytyt",
+      "description": "dsfgggg",
+      "lessons": []
     }
   ],
   "users": [
@@ -302,6 +511,20 @@
     },
     {
       "id": "c198",
+      "name": "tanya",
+      "email": "tanyajagota04@gmail.com",
+      "phone": "09805580258",
+      "password": "tanya123"
+    },
+    {
+      "id": "26d7",
+      "name": "tanya",
+      "email": "tanyajagota04@gmail.com",
+      "phone": "09805580258",
+      "password": "tanya123"
+    },
+    {
+      "id": "ae6f",
       "name": "tanya",
       "email": "tanyajagota04@gmail.com",
       "phone": "09805580258",

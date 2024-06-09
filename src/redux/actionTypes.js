@@ -1,0 +1,15 @@
+const GETCOURSE_LOADING = "getloading";
+const GETCOURSE_SUCCESS = "getsuccess";
+const GETCOURSE_ERROR = "geterror";
+const POSTCOURSE_LOADING = "postloading";
+const POSTCOURSE_SUCCESS = "postsuccess";
+const POSTCOURSE_ERROR = "posterror";
+
+export {
+  GETCOURSE_LOADING,
+  GETCOURSE_SUCCESS,
+  GETCOURSE_ERROR,
+  POSTCOURSE_LOADING,
+  POSTCOURSE_SUCCESS,
+  POSTCOURSE_ERROR,
+};

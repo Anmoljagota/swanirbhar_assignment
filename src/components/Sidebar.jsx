@@ -15,6 +15,7 @@ const Sidebar = () => {
       borderTop={"1px solid rgba(255,255,255,.3)"}
       borderLeft={"1px solid rgba(255,255,255,.3)"}
       height={"100vh"}
+      display={{ md: "block", sm: "none", base: "none" }}
     >
       <Box>
         <Center>

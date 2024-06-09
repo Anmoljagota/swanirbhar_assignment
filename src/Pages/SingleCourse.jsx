@@ -1,10 +1,8 @@
 import {
   Box,
   Heading,
-  Image,
   Text,
   VStack,
-  StackDivider,
   HStack,
   SimpleGrid,
   Badge,
@@ -13,35 +11,74 @@ import {
   Divider,
   Flex,
   useColorModeValue,
+  CircularProgress,
+  CircularProgressLabel,
 } from "@chakra-ui/react";
-import { RandomImages } from "../utils/RandomImages";
 import React, { useEffect, useState } from "react";
 import { FaCheck, FaLeaf, FaPlay, FaTimes } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
-
+import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { MarkLesson } from "../redux/action";
 const SingleCourse = () => {
+  const dispatch = useDispatch();
+  const { courses } = useSelector((details) => {
+    return details;
+  });
   const [data, setData] = useState({});
   const { state } = useLocation();
+
+  const enrolledData = JSON.parse(localStorage.getItem("enrolled")) || [];
+  const isEnrolled = enrolledData.includes(state.id);
+  const [text, setText] = useState(isEnrolled ? "Enrolled" : "Enroll Now");
+  const [disabled, setDisabled] = useState(isEnrolled ? true : false);
   useEffect(() => {
     if (state) {
       setData(state);
     }
   }, []);
-  const cardBg = useColorModeValue("white", "gray.800");
   const cardHoverBg = useColorModeValue("gray.100", "gray.700");
   const iconColor = useColorModeValue("green.500", "green.300");
   const buttonBg = useColorModeValue("teal.500", "teal.300");
   const buttonHoverBg = useColorModeValue("teal.600", "teal.400");
 
-  const handleToggleLesson = (index) => {
+  const handleToggleLesson = (index, id, lessonname) => {
     setData((prevData) => ({
       ...prevData,
       lessons: prevData.lessons.map((lesson, i) =>
         i === index ? { ...lesson, completed: !lesson.completed } : lesson
       ),
     }));
+    Progress(id, lessonname);
   };
 
+  async function Enrolled(id) {
+    try {
+      await axios.patch(`http://localhost:8080/courses/${id}`, {
+        "number of students": data["number of students"] + 1,
+      });
+      const enrolled = JSON.parse(localStorage.getItem("enrolled")) || [];
+      enrolled.push(id);
+      localStorage.setItem("enrolled", JSON.stringify(enrolled));
+      setText("Enrolled");
+      setDisabled(true);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  async function Progress(courseid, lessonname) {
+    courses.forEach((ele) => {
+      if (ele.id === courseid) {
+        const updatedLessons = ele.lessons.map((lesson) => {
+          return lesson.lessontitle === lessonname
+            ? { ...lesson, completed: !lesson.completed }
+            : lesson;
+        });
+        dispatch(MarkLesson(courseid, updatedLessons));
+      }
+    });
+  }
   return (
     <Box padding="20px" maxW="1200px" mx="auto">
       {data && data.title && (
@@ -52,15 +89,14 @@ const SingleCourse = () => {
             align="center"
           >
             <Box flex="1" mb={{ base: 6, md: 0 }} p={5}>
-              <Image
-                src={RandomImages[Math.floor(Math.random() * 10)]}
-                alt={data.title}
-                borderRadius="lg"
-                boxShadow="xl"
-                transition="all 0.3s ease-in-out"
-                _hover={{ transform: "scale(1.05)" }}
-                boxSize={"450px"}
-              />
+              <CircularProgress
+                value={40}
+                color="orange.400"
+                thickness={"16px"}
+                size={{ base: "150px", sm: "200px", md: "300px" }}
+              >
+                <CircularProgressLabel>40%</CircularProgressLabel>
+              </CircularProgress>
             </Box>
             <VStack flex="1" align="start" spacing={4} pl={{ md: 10 }}>
               <HStack spacing={2}>
@@ -81,8 +117,10 @@ const SingleCourse = () => {
                 size="lg"
                 rightIcon={<Icon as={FaPlay} />}
                 _hover={{ bg: buttonHoverBg }}
+                onClick={() => Enrolled(data.id)}
+                isDisabled={disabled}
               >
-                Enroll Now
+                {text}
               </Button>
             </VStack>
           </Flex>
@@ -124,9 +162,13 @@ const SingleCourse = () => {
                     size="sm"
                     variant="outline"
                     colorScheme={lesson.completed ? "green" : "red"}
-                    onClick={() => handleToggleLesson(index)}
+                    onClick={() =>
+                      handleToggleLesson(index, data.id, lesson.lessontitle)
+                    }
                   >
-                    {lesson.completed ? "Mark as Incomplete" : "Mark as Complete"}
+                    {lesson.completed
+                      ? "Mark as Incomplete"
+                      : "Mark as Complete"}
                   </Button>
                 </VStack>
               </Box>
