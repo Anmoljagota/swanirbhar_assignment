@@ -32,7 +32,9 @@ const SingleCourse = () => {
   const { id } = useParams();
   // console.log(id,"i am id");
   async function GetSinglecourse(courseId) {
-    const data = await axios.get(`https://swanirbhar-backend.onrender.com/courses/${courseId}`);
+    const data = await axios.get(
+      `https://swanirbhar-backend.onrender.com/courses/${courseId}`
+    );
     setData(data.data);
   }
 
@@ -59,7 +61,7 @@ const SingleCourse = () => {
         title: `Enroll first`,
         status: "error",
         isClosable: true,
-        duration: 2000
+        duration: 2000,
       });
     } else {
       setData((prevData) => ({
@@ -75,9 +77,12 @@ const SingleCourse = () => {
   //this function is created to enrolled the user to a particular course
   async function Enrolled(id) {
     try {
-      await axios.patch(`https://swanirbhar-backend.onrender.com/courses/${id}`, {
-        "number of students": data["number of students"] + 1,
-      });
+      await axios.patch(
+        `https://swanirbhar-backend.onrender.com/courses/${id}`,
+        {
+          "number of students": data["number of students"] + 1,
+        }
+      );
       const enrolled = JSON.parse(localStorage.getItem("enrolled")) || [];
       enrolled.push(id);
       localStorage.setItem("enrolled", JSON.stringify(enrolled));
@@ -125,7 +130,7 @@ const SingleCourse = () => {
               >
                 <CircularProgressLabel>
                   {localStorage.getItem("progress")
-                    ? localStorage.getItem("progress")
+                    ? `${localStorage.getItem("progress")}%`
                     : "0%"}
                 </CircularProgressLabel>
               </CircularProgress>

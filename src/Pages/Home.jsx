@@ -1,4 +1,10 @@
-import { Flex, SimpleGrid, Stack } from "@chakra-ui/react";
+import {
+  CircularProgress,
+  CircularProgressLabel,
+  Flex,
+  SimpleGrid,
+  Stack,
+} from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import Sidebar from "../components/Sidebar";
 import CourseItems from "../components/CourseItems";
@@ -17,10 +23,10 @@ const Home = () => {
   }, []);
   if (courses.length > 0) {
     const completedLessons = courses
-      .flatMap((course) => course.lessons)
-      .filter((lesson) => lesson.completed === true);
+      .flatMap((course) => course?.lessons)
+      .filter((lesson) => lesson?.completed === true);
     const totalLessons = courses.reduce(
-      (total, course) => total + course.lessons.length,
+      (total, course) => total + course?.lessons?.length,
       0
     );
 
@@ -35,6 +41,7 @@ const Home = () => {
   return (
     <Flex bg={"#F8F0F9"} gap={10}>
       <Sidebar />
+
       <Stack
         direction={"column"}
         spacing="24px"
@@ -44,8 +51,26 @@ const Home = () => {
         p={4}
       >
         <NavBar />
+        <Flex justifyContent={"space-between"} alignItems={"center"}>
+          <AddCourse />
 
-        <AddCourse />
+          <CircularProgress
+            value={
+              localStorage.getItem("progress")
+                ? localStorage.getItem("progress")
+                : "0%"
+            }
+            color="orange.400"
+            thickness={"16px"}
+            size={{ base: "150px", sm: "200px", md: "100px" }}
+          >
+            <CircularProgressLabel>
+              {localStorage.getItem("progress")
+                ? `${localStorage.getItem("progress")}%`
+                : "0%"}
+            </CircularProgressLabel>
+          </CircularProgress>
+        </Flex>
 
         <SimpleGrid columns={[1, 2, 3]} spacing={"40px"}>
           {courses.length > 0 &&

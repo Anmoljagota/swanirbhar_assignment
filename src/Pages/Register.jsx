@@ -12,7 +12,7 @@ const Register = () => {
 
   async function saveUser() {
     try {
-      await fetch("https://swanirbhar-backend.onrender.com/courses", {
+      await fetch("https://swanirbhar-backend.onrender.com/users", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -51,7 +51,6 @@ const Register = () => {
     }
   };
 
-  useEffect(() => {}, []);
   return (
     <div>
       <User
