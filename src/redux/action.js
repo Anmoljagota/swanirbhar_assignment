@@ -3,9 +3,12 @@ import axios from "axios";
 export const GetCourse = () => async (dispatch) => {
   try {
     dispatch({ type: course.GETCOURSE_LOADING });
-    const data = await axios.get(`https://swanirbhar-backend.onrender.com/courses`);
+    const data = await axios.get(
+      `https://swanirbhar-backend.onrender.com/courses`
+    );
     // const data = await res.json();
     dispatch({ type: course.GETCOURSE_SUCCESS, payload: data.data });
+    return data;
   } catch (err) {
     dispatch({ type: course.GETCOURSE_ERROR, payload: err });
   }
@@ -28,10 +31,16 @@ export const AddnewCourse = (courseDetails) => async (dispatch) => {
 
 export const MarkLesson = (courseId, lessons) => async (dispatch) => {
   try {
-    return await axios.patch(`https://swanirbhar-backend.onrender.com/courses/${courseId}`, {
-      lessons,
-    });
+    return await axios.patch(
+      `https://swanirbhar-backend.onrender.com/courses/${courseId}`,
+      {
+        lessons,
+      }
+    );
   } catch (err) {
     console.log(err);
   }
 };
+
+//login details
+

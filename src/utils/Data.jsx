@@ -7,12 +7,12 @@ import { TbUsers, TbReportSearch } from "react-icons/tb";
 
 export const Links = [
   { path: "/", title: "Home", icon: <AiOutlineCodeSandbox /> },
-  { path: "/adminproducts", title: "Products", icon: <BiBox /> },
-  { path: "/users", title: "Members", icon: <AiOutlineDribbbleSquare /> },
-  { path: "/k", title: "Sales", icon: <TbUsers /> },
-  { path: "/p", title: "Analysis", icon: <HiDocumentReport /> },
-  { path: "/l", title: "Back Accounts", icon: <AiOutlineDribbbleSquare /> },
-  { path: "/i", title: "Admin/Hr", icon: <TbUserCheck /> },
-  { path: "/o", title: "Reporting", icon: <TbReportSearch /> },
-  { path: "/chart", title: "Members", icon: <AiOutlineDribbbleSquare /> },
+  { path: "/course", title: "Courses", icon: <BiBox /> },
+  { path: "/lesson", title: "lessons", icon: <AiOutlineDribbbleSquare /> },
+  { path: "/user", title: "Users", icon: <TbUsers /> },
+  { path: "/teacher", title: "Teachers", icon: <HiDocumentReport /> },
+  { path: "/progress", title: "Progress", icon: <AiOutlineDribbbleSquare /> },
+  { path: "/admin", title: "Admin/Hr", icon: <TbUserCheck /> },
+  { path: "/repoer", title: "Reporting", icon: <TbReportSearch /> },
+  { path: "/members", title: "Members", icon: <AiOutlineDribbbleSquare /> },
 ];

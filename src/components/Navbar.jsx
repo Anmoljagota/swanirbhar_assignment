@@ -11,13 +11,18 @@ import {
   AvatarBadge,
   Image,
   HStack,
-  useColorMode,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { useBreakpointValue } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
+  const navigate = useNavigate();
   const ShowOrNot = useBreakpointValue({ base: false, lg: true });
+  function handleLogout() {
+    localStorage.removeItem("token");
+    navigate("/login");
+  }
   return (
     <Flex
       justifyContent={"flex-start"}
@@ -67,16 +72,18 @@ const NavBar = () => {
             }
           />
         )}
-        <HStack>
+        <HStack color={"#9B8C8D"} spacing={5}>
           <Avatar size="sm" src="https://bit.ly/dan-abramov">
             <AvatarBadge boxSize="1.25em" bg="green.500" />
           </Avatar>
-          <Text color={"#9B8C8D"}>
+          <Text>
             {localStorage.getItem("token")
               ? localStorage.getItem("token")
               : "Johnson smith"}
           </Text>
-         
+          <Text cursor={"pointer"} onClick={handleLogout}>
+            Logout
+          </Text>
         </HStack>
       </Flex>
     </Flex>

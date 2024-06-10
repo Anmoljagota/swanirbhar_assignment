@@ -7,6 +7,7 @@ import {
   Heading,
   Image,
   Input,
+  Select,
   Text,
 } from "@chakra-ui/react";
 import React from "react";
@@ -21,6 +22,9 @@ const User = ({
   error,
   formError,
 }) => {
+  function handleUser(e) {
+    localStorage.setItem("user", e.target.value);
+  }
   return (
     <Flex justifyContent={"center"} height={"100vh"} alignItems={"center"}>
       <Flex
@@ -61,7 +65,14 @@ const User = ({
               </Box>
             );
           })}
-
+          <Select placeholder="Login as" mt={4} onChange={handleUser} color="black">
+            <option value="teacher" >
+              Teacher
+            </option>
+            <option value="student" >
+              Student
+            </option>
+          </Select>
           <Flex
             justifyContent={"center"}
             alignItems={"center"}

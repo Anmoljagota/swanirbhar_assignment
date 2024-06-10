@@ -23,6 +23,7 @@ import { GetCourse, MarkLesson } from "../redux/action";
 import Lessons from "../components/Lessons";
 const SingleCourse = () => {
   const toast = useToast();
+  const [progressforce, setProgressforce] = useState(false);
   const [data, setData] = useState({});
   const dispatch = useDispatch();
   const { state } = useLocation();
@@ -54,6 +55,10 @@ const SingleCourse = () => {
     GetSinglecourse(id);
   }, []);
 
+  useEffect(() => {
+    ProgressTracker();
+    setProgressforce(!progressforce);
+  }, [ProgressTracker]);
   // toggle to mark as compelete or notcomplete lesson
   const handleToggleLesson = (index, id, lessonname) => {
     if (!disabled) {
@@ -103,13 +108,30 @@ const SingleCourse = () => {
         });
         // console.log(updatedLessons, "che..");
         dispatch(MarkLesson(courseid, updatedLessons)).then(() => {
-          dispatch(GetCourse());
+          dispatch(GetCourse()).then(() => {});
         });
       }
     });
   }
+
+  function ProgressTracker() {
+    if (courses.length > 0) {
+      const completedLessons = courses
+        .flatMap((course) => course?.lessons)
+        .filter((lesson) => lesson?.completed === true);
+      const totalLessons = courses.reduce(
+        (total, course) => total + course?.lessons?.length,
+        0
+      );
+      const progress = Math.ceil(
+        (completedLessons.length / totalLessons) * 100
+      );
+
+      localStorage.setItem("progress", progress);
+    }
+  }
   return (
-    <Box padding="20px" maxW="1200px" mx="auto">
+    <Box padding="20px" maxW="1100px" mx="auto">
       {data && data.title && (
         <>
           <Flex

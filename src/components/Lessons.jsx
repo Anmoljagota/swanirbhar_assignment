@@ -48,7 +48,6 @@ const Lessons = ({ lesson, index, id, handleToggleLesson }) => {
           variant="outline"
           colorScheme={lesson.completed ? "green" : "red"}
           onClick={() => handleToggleLesson(index, id, lesson.lessontitle)}
-        //   isDisabled={!disabled}
         >
           {lesson.completed ? "Mark as Incomplete" : "Mark as Complete"}
         </Button>
