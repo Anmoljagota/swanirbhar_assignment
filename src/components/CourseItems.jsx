@@ -16,19 +16,18 @@ import { SiBookstack } from "react-icons/si";
 import { Link } from "react-router-dom";
 import { RandomImages } from "../utils/RandomImages";
 const CourseItems = ({ course }) => {
-  
   return (
     <Link to={`/coursedetails/${course.id}`} state={course}>
       <Box
         borderRadius={10}
         bgImage={`url(${RandomImages[Math.floor(Math.random() * 10)]})`}
         pos={"relative"}
-        height={"390px"}
+        height={"400px"}
         boxShadow={"rgba(0, 0, 0, 0.16) 0px 1px 4px"}
         transition="all 0.3s ease-in-out"
         _hover={{ transform: "scale(1.05)" }}
         cursor={"pointer"}
-        // height={"300px"}
+        overflowY={"hidden"}
       >
         <Flex
           flexDir={"column"}
@@ -36,7 +35,7 @@ const CourseItems = ({ course }) => {
           position={"absolute"}
           bg={"#FFFFFF"}
           bottom={"0"}
-          h={"70%"}
+          height={"70%"}
           p={4}
           w={"100%"}
         >

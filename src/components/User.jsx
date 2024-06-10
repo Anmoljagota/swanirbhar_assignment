@@ -26,8 +26,9 @@ const User = ({
     localStorage.setItem("user", e.target.value);
   }
   return (
-    <Flex justifyContent={"center"} height={"100vh"} alignItems={"center"}>
+    <Flex justifyContent={"center"} height={"100vh"}  alignItems={"center"} >
       <Flex
+     
         minW={{ sm: "50%", lg: "30%", base: "90%" }}
         backgroundImage={"linear-gradient(1deg, #A100FFFF 0%, #71C4FFFF 100%)"}
         backgroundSize={"100% 100%"}

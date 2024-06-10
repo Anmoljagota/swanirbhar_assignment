@@ -28,7 +28,7 @@ const Home = () => {
   return (
     <Flex
       gap={10}
-      minW={{ sm: "95%", md: "80%", base: "95%" }}
+      minW={{ sm: "95%",lg:"80%", base: "95%" }}
     >
 
       <Stack

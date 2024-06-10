@@ -139,7 +139,7 @@ const SingleCourse = () => {
             mb={10}
             align="center"
           >
-            <Box flex="1" mb={{ base: 6, md: 0 }} p={5}>
+            <Box flex={0.5} mb={{ base: 6, md: 0 }} p={{ base: 2, md: 5 }}>
               <CircularProgress
                 value={
                   localStorage.getItem("progress")
@@ -148,7 +148,7 @@ const SingleCourse = () => {
                 }
                 color="orange.400"
                 thickness={"16px"}
-                size={{ base: "150px", sm: "200px", md: "300px" }}
+                size={{ base: "150px", sm: "200px", md: "200px" }}
               >
                 <CircularProgressLabel>
                   {localStorage.getItem("progress")
