@@ -17,7 +17,7 @@ export const GetCourse = () => async (dispatch) => {
 export const AddnewCourse = (courseDetails) => async (dispatch) => {
   try {
     dispatch({ type: course.POSTCOURSE_LOADING });
-    await fetch("https://swanirbhar-backend.onrender.com/courses", {
+    return await fetch("https://swanirbhar-backend.onrender.com/courses", {
       method: "POST",
       headers: {
         "content-Type": "application/json",

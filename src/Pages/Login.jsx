@@ -34,7 +34,7 @@ const Login = () => {
 
       navigate("/");
       if (data.data.length === 0) {
-        console.log("running..");
+       
         toast({
           title: "Invalid credentials.",
           description: "User authtication failed",

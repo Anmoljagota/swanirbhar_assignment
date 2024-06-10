@@ -22,7 +22,10 @@ import React, { useState } from "react";
 import { MdOutlineAdd } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { AddnewCourse } from "../redux/action";
-export function AddCourse() {
+
+import { useToast } from "@chakra-ui/react";
+export function AddCourse({ GetCourse }) {
+  const toast = useToast();
   const dispatch = useDispatch();
 
   const details = {
@@ -47,17 +50,28 @@ export function AddCourse() {
     }
   }
   const AddNewCourse = () => {
-    dispatch(AddnewCourse(courseDetails));
+    dispatch(AddnewCourse(courseDetails)).then(() => {
+      dispatch(GetCourse());
+    });
+    onClose();
+    toast({
+      title: "Course Added",
+      status: "success",
+      duration: 2000,
+      isClosable: true,
+    });
   };
 
   function handleInput() {
     setInput(true);
+
     if (lesson.lessontitle && lesson.material) {
       const newcourseDetails = { ...courseDetails };
       newcourseDetails.lessons.push(lesson);
       setLesson({ lessontitle: "", material: "" });
     }
   }
+
   return (
     <>
       <Button

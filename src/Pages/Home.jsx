@@ -41,7 +41,7 @@ const Home = () => {
       ) : (
         <>
           <Flex justifyContent={"space-between"} alignItems={"center"}>
-            {localStorage.getItem("user") === "teacher" && <AddCourse />}
+            {localStorage.getItem("user") === "teacher" && <AddCourse GetCourse={GetCourse}/>}
 
             <CircularProgress
               value={
