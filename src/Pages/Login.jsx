@@ -11,17 +11,14 @@ const Login = () => {
     token,
     userData,
     error: loginerror,
-    loading
+    loading,
   } = useSelector((data) => {
     return data.user;
   });
   const toast = useToast();
-
   const navigate = useNavigate();
-
   const details = ["email", "password"];
   const uservalue = { email: "", password: "" };
-
   const [loginDetails, setLoginDetails] = useState(uservalue);
   const [error, setError] = useState("");
   const [formError, setFormError] = useState("");

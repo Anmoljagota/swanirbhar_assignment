@@ -3,13 +3,10 @@ import User from "../components/User";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { RegiterUser } from "../redux/users/action";
+
 const Register = () => {
   const dispatch = useDispatch();
-  const {
-    message,
-    loading,
-    error: usererror,
-  } = useSelector((detail) => {
+  const { message, error: usererror } = useSelector((detail) => {
     return detail.user;
   });
 
@@ -57,6 +54,9 @@ const Register = () => {
     }
   };
 
+  if (usererror) {
+    <h3>some internal error we will react out you later</h3>;
+  }
   return (
     <div>
       <User

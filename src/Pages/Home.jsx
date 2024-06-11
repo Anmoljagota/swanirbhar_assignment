@@ -45,8 +45,7 @@ const Home = () => {
       p={4}
     >
       <NavBar />
-
-      <>
+<>
         <Flex
           justifyContent={"space-between"}
           alignItems={"center"}
@@ -55,8 +54,7 @@ const Home = () => {
           {localStorage.getItem("user") === "teacher" && (
             <AddCourse GetCourse={GetCourse} />
           )}
-
-          <CircularProgress
+<CircularProgress
             value={
               localStorage.getItem("progress")
                 ? localStorage.getItem("progress")

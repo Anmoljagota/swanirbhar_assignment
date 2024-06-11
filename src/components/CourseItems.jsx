@@ -12,9 +12,9 @@ import {
 import React from "react";
 import { IoMdMan } from "react-icons/io";
 import { SiBookstack } from "react-icons/si";
-
 import { Link } from "react-router-dom";
 import { RandomImages } from "../utils/RandomImages";
+
 const CourseItems = ({ course }) => {
   return (
     <Link to={`/coursedetails/${course.id}`} state={course}>

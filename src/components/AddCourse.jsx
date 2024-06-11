@@ -22,8 +22,8 @@ import React, { useState } from "react";
 import { MdOutlineAdd } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { AddnewCourse } from "../redux/courses/action";
-
 import { useToast } from "@chakra-ui/react";
+
 export function AddCourse({ GetCourse }) {
   const toast = useToast();
   const dispatch = useDispatch();
@@ -64,7 +64,6 @@ export function AddCourse({ GetCourse }) {
 
   function handleInput() {
     setInput(true);
-
     if (lesson.lessontitle && lesson.material) {
       const newcourseDetails = { ...courseDetails };
       newcourseDetails.lessons.push(lesson);
@@ -85,7 +84,6 @@ export function AddCourse({ GetCourse }) {
       >
         Create course
       </Button>
-
       <Modal
         initialFocusRef={initialRef}
         finalFocusRef={finalRef}
@@ -107,7 +105,6 @@ export function AddCourse({ GetCourse }) {
                 onChange={handleCourse}
               />
             </FormControl>
-
             <FormControl mt={4}>
               <FormLabel>Description</FormLabel>
               <Input

@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { FaCheck, FaTimes } from "react-icons/fa";
+
 const Lessons = ({ lesson, index, id, handleToggleLesson }) => {
   const cardHoverBg = useColorModeValue("gray.100", "gray.700");
   return (

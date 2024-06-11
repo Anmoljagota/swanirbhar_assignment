@@ -21,6 +21,7 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { GetCourse, MarkLesson } from "../redux/courses/action";
 import Lessons from "../components/Lessons";
+
 const SingleCourse = () => {
   const toast = useToast();
   const [progressforce, setProgressforce] = useState(false);
@@ -31,7 +32,6 @@ const SingleCourse = () => {
     return details.reducer;
   });
   const { id } = useParams();
-  // console.log(id,"i am id");
   async function GetSinglecourse(courseId) {
     const data = await axios.get(
       `https://swanirbhar-backend.onrender.com/courses/${courseId}`
@@ -42,10 +42,7 @@ const SingleCourse = () => {
   const iconColor = useColorModeValue("green.500", "green.300");
   const buttonBg = useColorModeValue("teal.500", "teal.300");
   const buttonHoverBg = useColorModeValue("teal.600", "teal.400");
-  // GETTING WHOLE DATA USING REDUX of courses
-
   const enrolledData = JSON.parse(localStorage.getItem("enrolled")) || [];
-
   const isEnrolled = enrolledData.includes(state.id);
 
   const [text, setText] = useState(isEnrolled ? "Enrolled" : "Enroll Now");
@@ -59,6 +56,7 @@ const SingleCourse = () => {
     ProgressTracker();
     setProgressforce(!progressforce);
   }, [ProgressTracker]);
+  
   // toggle to mark as compelete or notcomplete lesson
   const handleToggleLesson = (index, id, lessonname) => {
     if (!disabled) {
@@ -126,7 +124,6 @@ const SingleCourse = () => {
       const progress = Math.ceil(
         (completedLessons.length / totalLessons) * 100
       );
-
       localStorage.setItem("progress", progress);
     }
   }

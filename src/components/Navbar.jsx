@@ -64,7 +64,6 @@ const NavBar = () => {
             )}
           </Menu>
         )}
-
         {ShowOrNot && (
           <Image
             src={

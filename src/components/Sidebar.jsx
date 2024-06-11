@@ -1,8 +1,8 @@
 import Styles from "../style/sidebar.module.css";
 import { Avatar, Box, Center, Stack } from "@chakra-ui/react";
-// import { Box, Center, Flex, Img, Stack, Text } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 import { Links } from "../utils/Data";
+
 const Sidebar = () => {
   return (
     <Box
@@ -15,13 +15,12 @@ const Sidebar = () => {
       borderTop={"1px solid rgba(255,255,255,.3)"}
       borderLeft={"1px solid rgba(255,255,255,.3)"}
       height={"100vh"}
-      display={{  sm: "none", base: "none",lg:"block" }}
+      display={{ sm: "none", base: "none", lg: "block" }}
     >
       <Box>
         <Center>
           <Avatar src="https://logodix.com/logo/1834118.png" size={"lg"} />
         </Center>
-
         <ul style={{ marginTop: "10px", listStyle: "none" }}>
           {Links.map((link, index) => (
             <Stack key={index}>
