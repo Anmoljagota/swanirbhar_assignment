@@ -1,7 +1,23 @@
 import React, { useEffect, useState } from "react";
 import User from "../components/User";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { RegiterUser } from "../redux/users/action";
 const Register = () => {
+  const dispatch = useDispatch();
+  const {
+    message,
+    loading,
+    error: usererror,
+  } = useSelector((detail) => {
+    return detail.user;
+  });
+
+  useEffect(() => {
+    if (message === "user registered") {
+      navigate("/");
+    }
+  }, [message]);
   const details = ["name", "email", "phone", "password"];
   const uservalue = { name: "", email: "", phone: "", password: "" };
 
@@ -10,21 +26,11 @@ const Register = () => {
   const [formError, setFormError] = useState("");
   const navigate = useNavigate();
 
+  //dispatching the RegisterUser to save user in db
   async function saveUser() {
-    try {
-      await fetch("https://swanirbhar-backend.onrender.com/users", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(loginDetails),
-      });
-      localStorage.setItem("token", loginDetails.name);
-      navigate("/");
-    } catch (err) {
-      console.log(err);
-    }
+    dispatch(RegiterUser(loginDetails));
   }
+
   const handleDetails = (e) => {
     const { name, value } = e.target;
     setLoginDetails({ ...loginDetails, [name]: value });

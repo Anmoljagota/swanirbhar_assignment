@@ -19,7 +19,7 @@ import { FaLeaf, FaPlay } from "react-icons/fa";
 import { useLocation, useParams } from "react-router-dom";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { GetCourse, MarkLesson } from "../redux/action";
+import { GetCourse, MarkLesson } from "../redux/courses/action";
 import Lessons from "../components/Lessons";
 const SingleCourse = () => {
   const toast = useToast();
@@ -28,7 +28,7 @@ const SingleCourse = () => {
   const dispatch = useDispatch();
   const { state } = useLocation();
   const { courses } = useSelector((details) => {
-    return details;
+    return details.reducer;
   });
   const { id } = useParams();
   // console.log(id,"i am id");

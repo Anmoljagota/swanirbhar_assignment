@@ -42,5 +42,4 @@ export const MarkLesson = (courseId, lessons) => async (dispatch) => {
   }
 };
 
-//login details
 

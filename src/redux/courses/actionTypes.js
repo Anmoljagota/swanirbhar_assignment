@@ -1,6 +1,9 @@
 const GETCOURSE_LOADING = "getloading";
 const GETCOURSE_SUCCESS = "getsuccess";
 const GETCOURSE_ERROR = "geterror";
+const SEARCHCOURSE_LOADING = "searchloading";
+const SEARCHCOURSE_SUCCESS = "searchsuccess";
+const SEARCHCOURSE_ERROR = "searcherror";
 const POSTCOURSE_LOADING = "postloading";
 const POSTCOURSE_SUCCESS = "postsuccess";
 const POSTCOURSE_ERROR = "posterror";
@@ -12,4 +15,7 @@ export {
   POSTCOURSE_LOADING,
   POSTCOURSE_SUCCESS,
   POSTCOURSE_ERROR,
+  SEARCHCOURSE_LOADING,
+  SEARCHCOURSE_SUCCESS,
+  SEARCHCOURSE_ERROR,
 };

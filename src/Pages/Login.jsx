@@ -1,13 +1,24 @@
 import React, { useEffect, useState } from "react";
 import User from "../components/User";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import { useToast } from "@chakra-ui/react";
+import { useDispatch, useSelector } from "react-redux";
+import { LoginUser } from "../redux/users/action";
 
 const Login = () => {
+  const dispatch = useDispatch();
+  const {
+    token,
+    userData,
+    error: loginerror,
+    loading
+  } = useSelector((data) => {
+    return data.user;
+  });
   const toast = useToast();
 
   const navigate = useNavigate();
+
   const details = ["email", "password"];
   const uservalue = { email: "", password: "" };
 
@@ -19,6 +30,7 @@ const Login = () => {
     const { name, value } = e.target;
     setLoginDetails({ ...loginDetails, [name]: value });
   };
+
   //TO CHECK THE MAIL PATTERN
   const validateEmailFormat = (email) => {
     email = email.trim();
@@ -26,15 +38,17 @@ const Login = () => {
     return emailRegex.test(email);
   };
 
-  const CheckLogin = async () => {
-    try {
-      const data = await axios.get(
-        `https://swanirbhar-backend.onrender.com/users?email=${loginDetails.email}&password=${loginDetails.password}`
-      );
-
+  useEffect(() => {
+    if (token && userData.length > 0) {
       navigate("/");
-      if (data.data.length === 0) {
-       
+      localStorage.setItem("token", userData[0].name);
+    }
+  }, [token, userData]);
+
+  //TO CHECK whether can access the platform or not
+  const CheckLogin = async () => {
+    dispatch(LoginUser(loginDetails)).then((res) => {
+      if (res.data.length === 0) {
         toast({
           title: "Invalid credentials.",
           description: "User authtication failed",
@@ -42,12 +56,8 @@ const Login = () => {
           duration: 2000,
           isClosable: true,
         });
-      } else {
-        localStorage.setItem("token", "rahul");
       }
-    } catch (err) {
-      console.log(err);
-    }
+    });
   };
 
   //submit the user details
@@ -63,6 +73,12 @@ const Login = () => {
     }
   };
 
+  if (loading) {
+    return <h3>...Loading</h3>;
+  }
+  if (loginerror) {
+    return <h3>something went wrong we will reach out to you Later</h3>;
+  }
   return (
     <div>
       <User

@@ -21,7 +21,7 @@ import {
 import React, { useState } from "react";
 import { MdOutlineAdd } from "react-icons/md";
 import { useDispatch } from "react-redux";
-import { AddnewCourse } from "../redux/action";
+import { AddnewCourse } from "../redux/courses/action";
 
 import { useToast } from "@chakra-ui/react";
 export function AddCourse({ GetCourse }) {
